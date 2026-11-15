@@ -2,6 +2,8 @@
 
 An Astro site with React components.
 
+Requires Node.js 24 LTS (see `.nvmrc`).
+
 ## Work locally
 
 ```sh

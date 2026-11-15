@@ -7,8 +7,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/react": "^3.6.3",
-    "astro": "^4.16.19",
+    "@astrojs/react": "^7.1.9",
+    "astro": "^7.4.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }

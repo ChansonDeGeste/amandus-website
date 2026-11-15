@@ -1,45 +1,77 @@
+import { useRef, useState } from 'react';
+
 const audiences = [
   {
-    id: 'venues', number: '05', label: 'Venues', title: 'Venues benefit from:',
-    intro: 'AmPro creates value across the entire hospitality ecosystem.',
-    points: ['Lower costs', 'Annual rebates & incentives that puts more moeny in your pocket', 'Greater buying power without sacrificing your independence', 'Peer collaboration with a trusted network of experienced operators', 'Market insights and industry expertise to make smarter decisions'],
+    id: 'venues', label: 'Pubs & clubs', title: 'Independent pubs and clubs benefit from:',
+    intro: 'Keep your independence while making more of every purchasing decision.',
+    points: ['Lower costs', 'Potential rebates and incentives that put more money in your pocket', 'Greater buying power without sacrificing your independence', 'Peer collaboration with a trusted network of experienced operators', 'Market insights and industry expertise to make smarter decisions'],
   },
   {
-    id: 'brands', number: '06', label: 'National Brands', title: 'National brands benefit from:',
-    intro: 'AmPro creates value across the entire hospitality ecosystem.',
-    points: ['increased market share through a growing venue network', 'Stronger venue loyalty driven by long-term partnerships', 'Higher product adoption across engaged member companies', 'Direct access to independent operators for meaningful feedback and relationships', 'More predictable demand through collective purchasing'],
+    id: 'brands', label: 'National brands', title: 'National brands benefit from:',
+    intro: 'Build stronger relationships with independent operators through a connected network.',
+    points: ['Increased market share through a growing network of pubs and clubs', 'Stronger loyalty driven by long-term partnerships', 'Higher product adoption across engaged pubs and clubs', 'Direct access to independent operators for meaningful feedback and relationships', 'More predictable demand through collective purchasing'],
   },
   {
-    id: 'vendors', number: '07', label: 'Local Vendors', title: 'Local vendors benefit from:',
-    intro: 'AmPro creates value across the entire hospitality ecosystem.',
+    id: 'vendors', label: 'Local vendors', title: 'Local vendors benefit from:',
+    intro: 'Reach more nearby pubs and clubs with partnerships built to last.',
     points: ['Preferred venue relationships that strengthen local partnerships', 'Higher sales volume from committed member purchases', 'Improved customer retention through long-term business relationships', 'Less price shopping and greater focus on value over cost', 'New business opportunities from venues entering the network'],
   },
 ];
 
 export default function NetworkStory() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const tabRefs = useRef([]);
+
+  function onTabKeyDown(event, index) {
+    let nextIndex = index;
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % audiences.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + audiences.length) % audiences.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = audiences.length - 1;
+    else return;
+    event.preventDefault();
+    setSelectedIndex(nextIndex);
+    tabRefs.current[nextIndex]?.focus();
+  }
+
   return (
-    <div className="network-story story-light">
+    <section className="network-story story-light" id="network" aria-label="Who benefits from AmPro">
       <div className="story-inner network-grid">
         <div className="network-rail">
           <p className="eyebrow story-reveal" data-reveal>The ecosystem</p>
           <h2 className="story-reveal" data-reveal>A Network designed to <span>benefit everyone</span></h2>
-          <p className="story-reveal" data-reveal>AmPro creates value across the entire hospitality ecosystem.</p>
+          <p className="story-reveal" data-reveal>Connecting independent pubs and clubs with the suppliers who serve them.</p>
         </div>
-        <div className="network-panels">
-          {audiences.map((audience) => (
-            <section className="network-panel" id={audience.id} aria-labelledby={`${audience.id}-title`} key={audience.id}>
-              <div className="story-reveal" data-reveal>
-                <p className="eyebrow">{audience.number} / {audience.label}</p>
-                <h3 id={`${audience.id}-title`}>{audience.title}</h3>
+        <div className="network-content">
+          <div className="network-tabs" role="tablist" aria-label="Choose your role">
+            {audiences.map((audience, index) => (
+              <button
+                type="button"
+                role="tab"
+                id={`network-tab-${audience.id}`}
+                aria-controls={`network-panel-${audience.id}`}
+                aria-selected={selectedIndex === index}
+                tabIndex={selectedIndex === index ? 0 : -1}
+                onClick={() => setSelectedIndex(index)}
+                onKeyDown={(event) => onTabKeyDown(event, index)}
+                ref={(node) => { tabRefs.current[index] = node; }}
+                key={audience.id}
+              >{audience.label}</button>
+            ))}
+          </div>
+          <div className="network-panel-stack">
+            {audiences.map((audience, index) => (
+              <div className={`network-panel${selectedIndex === index ? ' is-active' : ''}`} role="tabpanel" id={`network-panel-${audience.id}`} aria-labelledby={`network-tab-${audience.id}`} aria-hidden={selectedIndex !== index} tabIndex={selectedIndex === index ? 0 : -1} key={audience.id}>
+                <h3>{audience.title}</h3>
                 <p className="story-lead">{audience.intro}</p>
                 <ul className="network-list">
                   {audience.points.map((point) => <li key={point}>{point}</li>)}
                 </ul>
               </div>
-            </section>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

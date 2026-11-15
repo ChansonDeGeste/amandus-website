@@ -2,7 +2,7 @@ export const team = [
   {
     id: 'paddy-dalton',
     initials: 'PD',
-    photo: '/team/paddy-dalton.png',
+    photo: '/team/paddy-dalton.jpg',
     overviewName: 'Paddy Dalton',
     overviewRole: 'Co-Founder & Managing Director',
     overviewPhone: '0434 872 210',
@@ -43,4 +43,3 @@ export const team = [
   },
   // Additional profile intentionally unpublished.
 ];
-

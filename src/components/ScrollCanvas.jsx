@@ -3,8 +3,7 @@ import '../styles/scroll-canvas.css';
 
 export default function ScrollCanvas() {
   return (
-    <main>
-      <div className="intro-scroll" aria-hidden="true" />
+    <main className="site-main">
       <StoryPage />
     </main>
   );

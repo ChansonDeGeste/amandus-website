@@ -3,6 +3,7 @@ import BenefitsStory from './BenefitsStory.jsx';
 import NetworkStory from './NetworkStory.jsx';
 import LeadershipStory from './LeadershipStory.jsx';
 import ContactStory from './ContactStory.jsx';
+import Footer from './Footer.jsx';
 import { useStoryMotion } from '../../hooks/useStoryMotion.js';
 import '../../styles/story.css';
 
@@ -16,6 +17,7 @@ export default function StoryPage() {
       <NetworkStory />
       <LeadershipStory />
       <ContactStory />
+      <Footer />
     </div>
   );
 }

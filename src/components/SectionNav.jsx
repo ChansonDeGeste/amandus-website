@@ -3,6 +3,7 @@ import { sectionGroups } from '../data/sections.js';
 
 export default function SectionNav() {
   const [activeId, setActiveId] = useState(sectionGroups[0].id);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     let lastScrollY = -1;
@@ -40,6 +41,7 @@ export default function SectionNav() {
   function goTo(id) {
     if (!id) return;
     setActiveId(id);
+    setMenuOpen(false);
     history.pushState(null, '', `#${id}`);
     document.getElementById(id)?.scrollIntoView({
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
@@ -48,8 +50,9 @@ export default function SectionNav() {
   }
 
   return (
-    <div className="hero__nav">
-      <nav className="hero__nav-links" aria-label="Page chapters">
+    <div className="site-nav">
+      <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-menu" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'Close' : 'Menu'}</button>
+      <nav className={`site-nav-links${menuOpen ? ' is-open' : ''}`} id="site-menu" aria-label="Main navigation">
         {sectionGroups.map(({ id, label }) => (
           <a
             href={`#${id}`}
@@ -61,14 +64,6 @@ export default function SectionNav() {
           </a>
         ))}
       </nav>
-      <select
-        className="hero__nav-select"
-        aria-label="Jump to chapter"
-        value={activeId}
-        onChange={(event) => goTo(event.target.value)}
-      >
-        {sectionGroups.map(({ id, label }) => <option value={id} key={id}>{label}</option>)}
-      </select>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export const team = [
       "Drawing upon his industry relationships, specialist market knowledge and operational experience, Paddy is uniquely positioned to identify, negotiate and deliver meaningful procurement opportunities on behalf of Australia's hospitality businesses, with a clear focus on protecting profitability, strengthening purchasing power and improving the industry's long-term financial resilience.",
     ],
     background: 'Hospitality Brokerage, Commercial Analysis & Advisory',
-    education: 'Bachelors of Psychological Science, Bond University',
+    education: 'Bachelor of Psychological Science, Bond University',
   },
   {
     id: 'charles-beatty',
@@ -27,10 +27,10 @@ export const team = [
     overviewName: 'Charles Beatty',
     overviewRole: 'Co-Founder & Director',
     overviewPhone: '0434 872 210',
-    overviewEmail: 'Charles.Beatty@ampro.com',
+    overviewEmail: 'charles.beatty@ampro.com',
     profileName: 'Charles Beatty',
     profileRole: 'Director - Strategy & Development',
-    profilePhone: '0434 XXX XXX',
+    profilePhone: '0434 872 210',
     profileEmail: 'charles.beatty@ampro.com',
     paragraphs: [
       "Charles brings more than six years' experience across corporate advisory and funding solutions, having operated in both the Australian and United Kingdom markets.",
@@ -41,25 +41,6 @@ export const team = [
     background: 'Corporate Advisory, Funding Solutions & Business Development',
     education: 'Bachelor of Property Economics, University of Technology',
   },
-  {
-    id: 'patrick-carter',
-    initials: 'PC',
-    photo: '/team/patrick-carter.png',
-    overviewName: 'Patrick Carter',
-    overviewRole: 'Co-Founder & Director',
-    overviewPhone: '0434 872 210',
-    overviewEmail: 'patrick.carter@ampro.com',
-    profileName: 'Pat Carter',
-    profileRole: 'Director - Data & Analytics',
-    profilePhone: '0439 014 370',
-    profileEmail: 'patrick.carter@ampro.com',
-    paragraphs: [
-      'Patrick Carter brings more than half a decade of experience across investment analysis, financial research and portfolio management, having held positions within some of the countries most respected investment and advisory firms.',
-      'Patrick held analytical positions at QSuper and Port Jackson Family Office before joining the highly regarded Koda Capital as an Investment Analyst. Throughout his career, Patrick has undertaken responsibilities spanning investment research, portfolio construction, asset allocation and investment manager due diligence, with exposure to both public and private markets.',
-      'During his tenure, Patrick has contributed to the analysis and management of investment portfolios representing X in assets, working alongside (whatever relevant clients or institutions). Throughout this time, Patrick has developed a reputation for his intellectual rigour, considered judgement and ability to communicate complex financial matters with clarity.',
-      "As Co-Founder, Patrick applies these capabilities to Amandus' commercial modelling, procurement analysis and strategic decision-making, with a clear focus on identifying cost efficiencies, evaluating supplier arrangements and delivering measurable financial benefits to Amandus' members.",
-    ],
-    background: 'Investment Analysis, Portfolio Management & Financial Research',
-    education: 'Bachelor of Actuarial Science (Finance), Bond University',
-  },
+  // Additional profile intentionally unpublished.
 ];
+

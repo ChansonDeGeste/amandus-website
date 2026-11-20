@@ -96,9 +96,9 @@ export default function HeroBanner() {
   return (
     <>
       <header className="site-header">
-        <a className="site-brand" href="#top" onClick={openCover} aria-label="AmPro, back to cover"><img src="/images/amandus-mark.svg" alt="" /> <span>AmPro</span></a>
+        <a className="site-brand" href="#top" onClick={openCover} aria-label="Amandus, back to cover"><img src="/images/amandus-mark.svg" alt="" /> <span>Amandus</span></a>
         <SectionNav />
-        <a className="header-cta" href="#contact">Book a call</a>
+        <a className="header-cta" href="#contact">Request Call</a>
       </header>
       <section className={`hero${coverClosed ? ' hero--closed' : ''}${morphComplete ? ' hero--finished' : ''}`} id="top" aria-labelledby="hero-title" aria-hidden={coverClosed}>
         <HeroBackdrop />

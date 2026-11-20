@@ -2,17 +2,17 @@ import { useRef, useState } from 'react';
 
 const audiences = [
   {
-    id: 'venues', label: 'Pubs & clubs', title: 'Independent pubs and clubs benefit from:',
+    id: 'venues', label: 'Pubs & Clubs', title: 'Independent Pubs and Clubs Benefit From:',
     intro: 'Keep your independence while making more of every purchasing decision.',
     points: ['Lower costs', 'Potential rebates and incentives that put more money in your pocket', 'Greater buying power without sacrificing your independence', 'Peer collaboration with a trusted network of experienced operators', 'Market insights and industry expertise to make smarter decisions'],
   },
   {
-    id: 'brands', label: 'National brands', title: 'National brands benefit from:',
+    id: 'brands', label: 'National Brands', title: 'National Brands Benefit From:',
     intro: 'Build stronger relationships with independent operators through a connected network.',
     points: ['Increased market share through a growing network of pubs and clubs', 'Stronger loyalty driven by long-term partnerships', 'Higher product adoption across engaged pubs and clubs', 'Direct access to independent operators for meaningful feedback and relationships', 'More predictable demand through collective purchasing'],
   },
   {
-    id: 'vendors', label: 'Local vendors', title: 'Local vendors benefit from:',
+    id: 'vendors', label: 'Local Vendors', title: 'Local Vendors Benefit From:',
     intro: 'Reach more nearby pubs and clubs with partnerships built to last.',
     points: ['Preferred venue relationships that strengthen local partnerships', 'Higher sales volume from committed member purchases', 'Improved customer retention through long-term business relationships', 'Less price shopping and greater focus on value over cost', 'New business opportunities from venues entering the network'],
   },
@@ -35,12 +35,15 @@ export default function NetworkStory() {
   }
 
   return (
-    <section className="network-story story-light" id="network" aria-label="Who benefits from AmPro">
+    <section className="network-story story-dark" id="network" aria-label="Who benefits from Amandus">
       <div className="story-inner network-grid">
         <div className="network-rail">
-          <p className="eyebrow story-reveal" data-reveal>The ecosystem</p>
-          <h2 className="story-reveal" data-reveal>A Network designed to <span>benefit everyone</span></h2>
-          <p className="story-reveal" data-reveal>Connecting independent pubs and clubs with the suppliers who serve them.</p>
+          <p className="eyebrow story-reveal" data-reveal>The Ecosystem</p>
+          <h2 className="story-reveal" data-reveal>A Network Designed to <span>Benefit Everyone</span></h2>
+          <p className="story-reveal" data-reveal>Amandus is purposefully positioned to create value throughout the entire hospitality ecosystem.</p>
+          <div className="network-graphic story-reveal" data-reveal>
+            <img src="/images/benefit-everyone.svg" alt="Benefit Everyone graphic showing hospitality, partnerships and community" loading="lazy" decoding="async" />
+          </div>
         </div>
         <div className="network-content">
           <div className="network-tabs" role="tablist" aria-label="Choose your role">

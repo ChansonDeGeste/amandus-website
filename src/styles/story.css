@@ -120,12 +120,13 @@
 .text-link:focus-visible { color: #74c2b9; }
 
 .story-intro {
-  background: var(--brand-green);
+  background: #fff;
 }
 
 .story-intro .intro-grid { display: block; }
 .story-intro .story-lead { max-width: 620px; }
 .hero-story-cta { margin-top: 36px; }
+.story-intro .hero-story-cta { color: var(--brand-green); }
 
 .intro-grid,
 .market-grid,
@@ -146,8 +147,10 @@
   letter-spacing: -.05em;
 }
 
-.story-independent { background: var(--brand-paper); }
+.story-independent { background: var(--brand-green); }
 .story-independent .story-lead { max-width: 880px; }
+.story-independent .story-display span { color: #74c2b9; }
+.story-independent .process-step { border-top-color: rgba(249, 240, 223, .35); }
 .principle-grid,
 .benefit-grid,
 .team-grid { display: grid; gap: 16px; }
@@ -159,7 +162,7 @@
 .principle-card p,
 .benefit-card p { margin: 0; line-height: 1.6; }
 
-.story-benefits { background: var(--brand-paper); border-top: 1px solid rgba(44, 71, 53, .14); }
+.story-benefits { background: #fff; border-top: 1px solid rgba(44, 71, 53, .14); }
 .story-benefits .story-lead { max-width: 800px; }
 .benefit-grid { grid-template-columns: repeat(3, 1fr); margin-top: var(--space-xl); gap: 46px 30px; }
 .benefit-card { padding: 24px 0 0; border-top: 1px solid rgba(44, 71, 53, .25); }
@@ -181,10 +184,19 @@
 .metric strong { display: block; margin-top: 10px; font-size: 1.08rem; line-height: 1.4; }
 
 .network-story { padding: clamp(80px, 9vw, 130px) 5vw; border-top: 1px solid rgba(44, 71, 53, .14); scroll-margin-top: 72px; }
+.network-story .network-rail h2 span { color: #74c2b9; }
+.network-story .network-tabs { border-bottom-color: rgba(249, 240, 223, .3); }
+.network-story .network-tabs button { color: var(--brand-cream); }
+.network-story .network-tabs button:hover,
+.network-story .network-tabs button:focus-visible,
+.network-story .network-tabs button[aria-selected="true"] { color: var(--brand-orange); border-bottom-color: var(--brand-orange); }
+.network-story .network-list li:not(:last-child) { border-bottom-color: rgba(249, 240, 223, .2); }
 .network-grid { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: clamp(50px, 7vw, 120px); }
 .network-rail { align-self: start; }
 .network-rail h2 { margin: 0; font-size: clamp(2.25rem, 3.7vw, 4rem); line-height: 1.15; letter-spacing: -.04em; }
-.network-rail > p:last-child { margin: 24px 0 0; line-height: 1.5; }
+.network-rail > p:last-of-type { margin: 24px 0 0; line-height: 1.5; }
+.network-graphic { width: min(100%, 460px); margin-top: 36px; }
+.network-graphic img { display: block; width: 100%; height: auto; }
 .network-tabs { display: flex; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(44, 71, 53, .24); }
 .network-tabs button { padding: 12px 10px; color: var(--brand-green); background: transparent; border: 0; border-bottom: 3px solid transparent; font: 800 .92rem Arial, Helvetica, sans-serif; cursor: pointer; }
 .network-tabs button:hover, .network-tabs button:focus-visible, .network-tabs button[aria-selected="true"] { color: var(--brand-accent); border-bottom-color: var(--brand-accent); }
@@ -202,7 +214,7 @@
 .network-list li:not(:last-child) { border-bottom: 1px solid rgba(44, 71, 53, .18); }
 .network-list li::before { content: '—'; display: inline-block; width: 28px; margin-left: -28px; color: var(--brand-orange); }
 
-.leadership-intro { background: var(--brand-paper); border-top: 1px solid rgba(44, 71, 53, .14); }
+.leadership-intro { background: #fff; border-top: 1px solid rgba(44, 71, 53, .14); }
 .leadership-intro .story-lead { max-width: 760px; }
 .team-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: var(--space-xl); gap: 22px; }
 .team-card { display: block; color: var(--brand-green); text-decoration: none; transition: color .2s ease, transform .2s ease; }

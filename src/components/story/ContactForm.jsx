@@ -15,9 +15,8 @@ export default function ContactForm() {
       ['Venue or business name', data.get('workplace')],
     ];
     const body = fields.map(([label, value]) => `${label}: ${value || ''}`).join('\n');
-    const recipient = audience === 'Venue' ? 'paddy.dalton@ampro.com' : 'charles.beatty@ampro.com';
-    const subject = `AmPro enquiry: ${audience}`;
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const subject = `Amandus discovery call request: ${audience}`;
+    window.location.href = `mailto:beatty222c@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -32,9 +31,9 @@ export default function ContactForm() {
       <label>First Name*<input type="text" name="firstName" autoComplete="given-name" required /></label>
       <label>Last Name*<input type="text" name="lastName" autoComplete="family-name" required /></label>
       <label>Phone Number*<input type="tel" name="phone" autoComplete="tel" required /></label>
-      <label>State or territory<select name="state" autoComplete="address-level1" defaultValue=""><option value="">Select state</option>{states.map((state) => <option value={state} key={state}>{state}</option>)}</select></label>
-      <label>Venue or business name*<input type="text" name="workplace" autoComplete="organization" required /></label>
-      <button type="submit">Open email to request a call</button>
+      <label>State or Territory<select name="state" autoComplete="address-level1" defaultValue=""><option value="">Select state</option>{states.map((state) => <option value={state} key={state}>{state}</option>)}</select></label>
+      <label>Venue or Business Name*<input type="text" name="workplace" autoComplete="organization" required /></label>
+      <button type="submit">Open Email to Send Enquiry</button>
       <p className="form-note">This opens a draft in your email app. Please press Send there to complete your enquiry.</p>
     </form>
   );
